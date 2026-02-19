@@ -4,29 +4,38 @@ const projects = [
     title: "Project Name",
     description:
       "A brief description of the project and what was accomplished. The challenges faced and the creative solutions implemented to deliver results.",
-    href: "/works",
+    href: "#",
   },
   {
     id: 2,
     title: "Project Name",
     description:
       "A brief description of the project and what was accomplished. The challenges faced and the creative solutions implemented to deliver results.",
-    href: "/works",
+    href: "#",
   },
   {
     id: 3,
     title: "Project Name",
     description:
       "A brief description of the project and what was accomplished. The challenges faced and the creative solutions implemented to deliver results.",
-    href: "/works",
+    href: "#",
   },
+];
+
+const skills = [
+  "UI Design",
+  "UX Research",
+  "Prototyping",
+  "Figma",
+  "Branding",
+  "Design Systems",
 ];
 
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* ── Hero ── */}
-      <section className="min-h-screen flex items-center bg-white">
+      <section id="top" className="min-h-screen flex items-center bg-white">
         <div className="max-w-6xl mx-auto px-8 py-24 w-full flex flex-col lg:flex-row items-center gap-16">
           {/* Left */}
           <div className="flex-1 max-w-xl">
@@ -62,14 +71,64 @@ export default function Home() {
 
           {/* Right – blob + photo */}
           <div className="flex-shrink-0 relative w-72 h-72 lg:w-96 lg:h-96">
-            {/* Yellow blob */}
             <div
               className="absolute inset-0 bg-yellow-400"
               style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
             />
-            {/* Photo placeholder */}
             <div className="absolute inset-6 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm font-medium overflow-hidden">
               Photo
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── About ── */}
+      <section id="about" className="py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="mb-16">
+            <h2 className="text-4xl font-extrabold text-gray-900 inline-block relative pb-3">
+              About
+              <span className="absolute bottom-0 left-0 w-full h-2 bg-yellow-400 rounded-full" />
+            </h2>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            {/* Photo placeholder */}
+            <div className="flex-shrink-0 relative w-64 h-64 lg:w-80 lg:h-80">
+              <div
+                className="absolute inset-0 bg-yellow-400"
+                style={{ borderRadius: "40% 60% 70% 30% / 40% 70% 30% 60%" }}
+              />
+              <div className="absolute inset-6 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm font-medium overflow-hidden">
+                Photo
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex-1">
+              <p className="text-gray-500 text-lg leading-relaxed mb-6">
+                Hi! I&apos;m Madelyn, a UI/UX Designer passionate about creating
+                user-centered digital products. I combine design thinking with a
+                keen eye for aesthetics to deliver experiences that are both
+                beautiful and functional.
+              </p>
+              <p className="text-gray-500 text-lg leading-relaxed mb-10">
+                With a background in visual design and user research, I work
+                closely with teams to turn complex problems into simple, elegant
+                solutions.
+              </p>
+
+              {/* Skills */}
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-yellow-400 text-gray-900 text-sm font-semibold rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -93,12 +152,9 @@ export default function Home() {
                   i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 } gap-12 items-center`}
               >
-                {/* Image placeholder */}
                 <div className="flex-1 w-full aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-sm">
                   Project Image
                 </div>
-
-                {/* Text */}
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {project.title}
@@ -120,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* ── Contact ── */}
-      <section id="contact" className="py-24 bg-white">
+      <section id="contact" className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-8">
           <div className="mb-16">
             <h2 className="text-4xl font-extrabold text-gray-900 inline-block relative pb-3">
